@@ -54,3 +54,6 @@ main {
   height: 80px !important;
   background-color: red;
 }
+.small-container {
+  max-width: 600px !important;
+}
