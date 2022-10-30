@@ -1,7 +1,31 @@
 /** @format */
 
 //creating an object to return sample products
+
+import bcrypt from 'bcryptjs';
+
 const data = {
+  users: [
+    {
+      name: 'natet',
+      email: 'admmin@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: true,
+    },
+    {
+      name: 'nate',
+      email: 'admin@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: false,
+    },
+    {
+      name: 'nateye',
+      email: 'user@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: false,
+    },
+  ],
+
   products: [
     {
       //_id: '1',
