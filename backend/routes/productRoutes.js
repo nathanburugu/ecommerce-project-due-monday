@@ -10,12 +10,20 @@ productRouter.get('/', async (req, res) => {
   res.send(products);
 });
 
+productRouter.post('/', (req, res, err) => {
+  Product.create(req.body)
+    .then((product) => {
+      res.send(product);
+    })
+    .catch(err);
+});
+
 productRouter.get('/slug/:slug', async (req, res) => {
   const product = await Product.findOne({ slug: req.params.slug });
   if (product) {
     res.send(product);
   } else {
-    res.status(404).send({ message: 'Product Not Found' });
+    res.status(404).send({ message: 'Product Not Foundd' });
   }
 });
 productRouter.get('/:id', async (req, res) => {
